@@ -1,0 +1,171 @@
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я:
+$ pwd
+/d/GIT/terminal_hw1/Terminal_HW1
+
+2) Создать папку:
+$ mkdir d1
+
+3) Зайти в папку:
+$ cd d1
+
+4) Создать 3 папки:
+$ mkdir d11 d22 d33
+$ ls -la
+total 0
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:56 ./
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:54 ../
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:56 d11/
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:56 d22/
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:56 d33/
+
+5) Зайти в любоую папку:
+$ cd d11
+$ pwd
+/d/GIT/terminal_hw1/Terminal_HW1/d1/d11
+
+6) Создать 5 файлов (3 txt, 2 json):
+$ touch f1.txt f2.txt f3.txt f4.json f5.json
+$ ls -la
+total 0
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:57 ./
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:56 ../
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f1.txt
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f2.txt
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f3.txt
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f4.json
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f5.json
+
+7) Создать 3 папки:
+$ mkdir d11_1 d11_2 d11_3
+
+8. Вывести список содержимого папки:
+$ ls -la
+total 4
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:58 ./
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:56 ../
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:58 d11_1/
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:58 d11_2/
+drwxr-xr-x 1 Владимир21 197121 0 Dec 30 15:58 d11_3/
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f1.txt
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f2.txt
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f3.txt
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f4.json
+-rw-r--r-- 1 Владимир21 197121 0 Dec 30 15:57 f5.json
+
+9) Открыть любой txt файл:
+$ vim f1.txt
+
+10) Написать туда что-нибудь, любой текст:
+ Press the "i" button to insert a text.
+line_1
+line_2
+line_3
+
+
+123445
+Press the "Esc" button to exit insert mode.
+
+11) Сохранить и выйти:
+ Write in a command line ":wq" and press the "Enter" button
+
+12) Выйти из папки на уровень выше:
+$ cd ../
+$ pwd
+/d/GIT/terminal_hw1/Terminal_HW1/d1
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку:
+$ mv d11/f2.txt d11/f3.txt d22
+
+14) Скопировать любые 2 файла, которые вы создали, в любую другую папку:
+$ cp d11/f4.json d11/f5.json d33
+
+15) Найти файл по имени:
+$ find . -name 'f1.txt'
+./d11/f1.txt
+
+16) Просмотреть содержимое в реальном времени (команда grep) изучите как она работает:
+#вывести названия файлов и содержимое файлов которые содержат "line"
+$ grep -r line .
+./d11/f1.txt:line_1
+./d11/f1.txt:line_2
+./d11/f1.txt:line_3
+
+#вывести названия файлов которые содержат именно "line_1"
+$ grep -r -w line_1 .
+./d11/f1.txt:line_1
+
+#вывести только названия файлов которые содержат "line"
+$ grep -r -l line .
+./d11/f1.txt
+
+17) вывести несколько первых строк из текстового файла:
+$ nl d11/f1.txt | head -n2
+     1  line_1
+     2  line_2
+
+18) вывести несколько последних строк из текстового файла:
+$ nl d11/f1.txt | tail -n2
+
+     4  123445
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает:
+$ less d11/f1.txt
+Press button "q" to quit "less" fuction.
+
+20) вывести дату и время:
+$ date
+Fri Dec 30 16:47:11 RTZ 2022
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5006/terminal-hw-request:
+
+
+Отправляем запрос в браузере:http://162.55.220.72:5006/terminal-hw-request
+
+Получаем ответ в браузере
+{
+  "Intro": "Hello!! This is your the first response from server", 
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)", 
+    "result": [
+      "Your_String", 
+      "Your_number"
+    ]
+  }
+}
+
+Отправляем запрос в GitBash: $ curl http://162.55.220.72:5006/terminal-hw-request
+
+Получаем ответ в GitBash
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   283  100   283    0     0   3884      0 --:--:-- --:--:-- --:--:--  4042{
+  "Intro": "Hello!! This is your the first response from server",
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
+
+Выполняем первое задание (Task_1).
+Отправляем запрос в GitBash: $ curl "http://162.55.220.72:5006/get_method?name=vladimir&age=27"
+
+Получаем ответ в GitBash:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    26  100    26    0     0    285      0 --:--:-- --:--:-- --:--:--   292[
+  "vladimir",
+  "27"
+]
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
