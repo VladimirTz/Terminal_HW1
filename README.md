@@ -1,5 +1,5 @@
 # Git-Bash
-## HW_1. The first part
+## HW_1. The first part [DZgithubTerminal_HW1.txt](<https://github.com/VladimirTz/Terminal_HW1/blob/main/DZgithubTerminal_HW1.txt>)
 
 ### Linux terminal (GitBash) commands
 
@@ -25,6 +25,5 @@
 20) вывести дату и время
 ***
 Задание *
-1) Отправить http запрос на сервер.
-http://162.55.220.72:5005/terminal-hw-request
+1) Отправить http запрос на сервер. http://162.55.220.72:5005/terminal-hw-request [Zadanie1.txt](<https://github.com/VladimirTz/Terminal_HW1/blob/main/Zadanie1.txt>)
 2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
